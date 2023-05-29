@@ -59,7 +59,7 @@ nav div div {
     background-color: inherit;
 }
 
-header {
+.header {
     margin: auto;
     margin-bottom: 2rem;
     width: 75%;
@@ -110,7 +110,7 @@ legend.radio-buttons-label {
     margin: 2rem auto;
 }
 
-footer {
+.footer {
     width: 100%;
     min-height: 30% !important;
     flex-grow: 1;
@@ -166,7 +166,7 @@ a.outside-link:focus {
 
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
-    header {
+    .header {
         width: 85%;
     }
 }

@@ -1,42 +1,36 @@
 <template>
     <h1 class="mb-5">Some details about software development and accessibility.</h1>
+    <h2>Fact table</h2>
     <table class="access-table">
-        <caption>
-            <h2>Fact table</h2>
-        </caption>
-        <thead>
-            <tr>
-                <th scope="col">Fact</th>
-                <th scope="col">Category</th>
-                <th scope="col">Source</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="item in tableData" :key="item.id">
-                <td>{{ item.fact }}</td>
-                <td>{{ item.category }}</td>
-                <td>{{ item.source }}</td>
-            </tr>
-        </tbody>
+        <tr class="header-row">
+            <td scope="col">Fact</td>
+            <td scope="col">Category</td>
+            <td scope="col">Source</td>
+        </tr>
+        <tr v-for="item in tableData" :key="item.id">
+            <td>{{ item.fact }}</td>
+            <td>{{ item.category }}</td>
+            <td>{{ item.source }}</td>
+        </tr>
     </table>
 
-    <h2 id="srdata-table-title" class="mt-5 p-0">Screen reader usage shares</h2>
+    <h2 id="srdata-table-title" class="mt-5 p-0">Screen reader use percentages by browser</h2>
     <p id="srdata-table-info" class="mb-0 p-0">
         Other screen reader + browser combinations including the table cells where data is not available amount up to 10.4%.
     </p>
-    <table aria-labelledby="srdata-table-title" aria-describedby="srdata-table-info" class="mt-0 access-table sr-table">
+    <table class="mt-0 access-table sr-table">
         <thead>
-            <tr>
-                <th class="srdata-th" scope="col">Screen reader / Browser</th>
-                <th class="right" scope="col">Chrome</th>
-                <th class="right" scope="col">Firefox</th>
-                <th class="right" scope="col">Internet Explorer</th>
-                <th class="right" scope="col">Safari</th>
+            <tr class="header-row">
+                <td class="srdata-td" scope="col">Screen reader / Browser</td>
+                <td class="right" scope="col">Chrome</td>
+                <td class="right" scope="col">Firefox</td>
+                <td class="right" scope="col">Internet Explorer</td>
+                <td class="right" scope="col">Safari</td>
             </tr>
         </thead>
         <tbody>
             <tr v-for="item in screenRederData" :key="item.id">
-                <th>{{ item.name }}</th>
+                <td class="header-cell">{{ item.name }}</td>
                 <td class="right">{{ getSrBrowserPercentage(item.chrome) }}</td>
                 <td class="right">{{ getSrBrowserPercentage(item.firefox) }}</td>
                 <td class="right">{{ getSrBrowserPercentage(item.IE) }}</td>
@@ -59,7 +53,7 @@
     const tableData = ref<TableRow[]>([
         {
             id: 1,
-            fact: "Software development is more about people than code.",
+            fact: "Software development is more about people tdan code.",
             category: "Software Development",
             source: "Common Knowledge",
         },
@@ -83,13 +77,13 @@
         },
         {
             id: 6,
-            fact: "Web accessibility also benefits people without disabilities.",
+            fact: "Web accessibility also benefits people witdout disabilities.",
             category: "Accessibility",
             source: "W3C",
         },
         {
             id: 7,
-            fact: "Python is one of the most loved programming languages.",
+            fact: "Pytdon is one of tde most loved programming languages.",
             category: "Software Development",
             source: "Stack Overflow Developer Survey 2020",
         },
@@ -148,15 +142,15 @@
         border-collapse: collapse;
     }
 
-    .access-table th,
-    .access-table td {
+    .access-table td,
+    .access-table th {
         border: 1px solid #212529;
         padding: 8px;
         text-align: left;
     }
 
-    th.right,
-    td.right {
+    td.right,
+    th.right {
         text-align: right;
     }
 
@@ -164,13 +158,15 @@
         background-color: #f2f2f2;
     }
 
-    .access-table th,
-    .access-table.sr-table .srdata-th {
+    .access-table tr.header-row td,
+    .access-table.sr-table .header-row .srdata-td {
         background-color: #164e83;
         color: white;
+        font-weight: bold;
     }
 
-    .access-table.sr-table th {
+    .access-table.sr-table tr.header-row td,
+    .access-table .header-cell {
         font-weight: bold;
         color: black;
         background-color: inherit;

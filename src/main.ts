@@ -10,6 +10,7 @@ import ModalView from "./views/ModalView.vue";
 import FormView from "./views/FormView.vue";
 import TableView from "./views/TableView.vue";
 import Popper from "vue3-popper";
+import "./style.css";
 
 const pageTitle = "Accessibility Exercises";
 
@@ -25,7 +26,6 @@ const router = createRouter({
 });
 
 router.afterEach((to, from) => {
-    document.title = to.meta.title as string;
     if (from != START_LOCATION) {
         document.getElementById("skiplink")?.focus();
     }
