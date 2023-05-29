@@ -1,6 +1,6 @@
 <template>
   <div class="form-field">
-    <label class="label" :for="id">{{ label }}<span v-if="required" class="required">*</span></label>
+    <label class="label">{{ label }}<span v-if="required" class="required">*</span></label>
     <input
       :id="id"
       class="input-field"
@@ -9,12 +9,10 @@
       @input="updateValue($event)"
       :required="required"
       :aria-required="required ? 'true' : 'false'"
-      :aria-describedby="error ? `${id}-error` : undefined"
       :min="min"
       :max="max"
       :step="step"
     />
-    <p v-if="error" :id="`${id}-error`" class="error">{{ error }}</p>
   </div>
 </template>
   
@@ -31,22 +29,12 @@
     step: { type: Number, default: 1 }
   })
 
-  let error = ref<string | null>(null)
-
   const emit = defineEmits(['update:modelValue']);
     
   let updateValue = ($event: Event) => {
     let value = ($event.target as HTMLInputElement).valueAsNumber
     emit('update:modelValue', value)
   }
-
-  watchEffect(() => {
-    if (props.required && props.modelValue == null) {
-      error.value = `${props.label} is required.`
-    } else {
-      error.value = null
-    }
-  })
 </script>
   
 <style scoped>
