@@ -5,7 +5,7 @@
             <img class="office-img" src="../assets/office.png" alt="" aria-hidden="true" />
         </div>
     </div>
-    <footer class="footer">
+    <div class="footer">
         <div class="footer-decoration-line"></div>
         <div class="footer-content m-3">
             <div class="row">
@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -51,7 +51,7 @@
 </script>
 
 <style scoped>
-    footer p,
+    .footer p,
     .footer-heading {
         color: #ffffff;
     }
@@ -71,11 +71,11 @@
         color: #ffffff;
     }
 
-    footer a {
+    .footer a {
         color: #ffffff;
     }
 
-    footer a:hover {
+    .footer a:hover {
         color: #b5d2f2;
     }
 
