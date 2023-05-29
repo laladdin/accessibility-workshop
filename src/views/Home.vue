@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1>Accessibility Workshop for Developers</h1>
-    <h2>Let's Learn Accessibility Together</h2>
+    <h2 class="big-heading">Accessibility Workshop for Developers</h2>
+    <h1 class="heading">Let's Learn Accessibility Together</h1>
     <p>
       Welcome to our platform for accessibility training designed specifically for developers. This website is anything but accessible. Can we make it accessible together?
     </p>
-    <h2>Accessibility Exercises</h2>
+    <h4 class="heading">Accessibility Exercises</h4>
     <p>
       The task is to fix accessibility problems. Accessibility issues are hidden in the structure of this site and the components it contains. Everyone can explore a limited area or component on the page and at the end of the workshop we go through the different sections together.
     </p>
@@ -15,23 +15,22 @@
     <p>
       The web application is implemented with Vue 3. Those who are familiar with using Vue or other progressive JavaScript frameworks can, in addition to using a browser, examine the source code and make changes directly to it.
     </p>
-    <h2>Comprehensive Learning Resources</h2>
+    <h1 class="heading">Comprehensive Learning Resources</h1>
     <p>
         Here is a list of resources to support your accessibility journey. The list includes useful websites and tools:
     </p>
     <ul>    
       <li>The website of 
         <a class="outside-link" 
-          href="https://www.w3.org/WAI/standards-guidelines/wcag/" 
+          href="https://www.w3.org/WAI/standards-guidelines/wcag/"
           target="_blank" 
           rel="noopener noreferrer"
           @mouseover="hovering = 'link1'"
           @mouseout="hovering = ''"
           @focus="focused = 'link1'"
           @blur="focused = ''">   
-          Web Content Accessibility Guidelines (WCAG)
+          Site1
           <img class="outside-link-icon" :src="hovering === 'link1'|| focused === 'link1' ? iconHover : icon" alt="" aria-hidden="true">
-          <span class="sr-only">(opens in a new window)</span>
         </a>
       </li>
       <li>The website of 
@@ -45,7 +44,6 @@
           @blur="focused = ''">   
           WebAIM
           <img class="outside-link-icon" :src="hovering === 'link2'|| focused === 'link2' ? iconHover : icon" alt="" aria-hidden="true">
-          <span class="sr-only">(opens in a new window)</span>
         </a>
       </li>
       <li>Axe by Deque Systems. More information on 
@@ -59,7 +57,6 @@
           @blur="focused = ''">   
           Axe by Deque Systems website
           <img class="outside-link-icon" :src="hovering === 'link3'|| focused === 'link3' ? iconHover : icon" alt="" aria-hidden="true">
-          <span class="sr-only">(opens in a new window)</span>
         </a>
       </li>      
       <li>Web Accessibility Evaluation Tools (WAVE) or Lighthouse for Chrome (ARC Toolkit?)</li>
@@ -74,7 +71,6 @@
           @blur="focused = ''">   
           WAI-ARIA website
           <img class="outside-link-icon" :src="hovering === 'link4'|| focused === 'link4' ? iconHover : icon" alt="" aria-hidden="true">
-          <span class="sr-only">(opens in a new window)</span>
         </a>
       </li>
       <li>
@@ -88,7 +84,6 @@
           @blur="focused = ''">   
           WebAIM's Color Contrast Checker (website)
           <img class="outside-link-icon" :src="hovering === 'link5'|| focused === 'link5' ? iconHover : icon" alt="" aria-hidden="true">
-          <span class="sr-only">(opens in a new window)</span>
         </a>
       </li>
       <li>
@@ -102,7 +97,6 @@
           @blur="focused = ''">
           WebAIM's Link Contrast Checker (website)
           <img class="outside-link-icon" :src="hovering === 'link6'|| focused === 'link6' ? iconHover : icon" alt="" aria-hidden="true">
-          <span class="sr-only">(opens in a new window)</span>
         </a>
       </li>
       <li>NVDA (Windows) or VoiceOver (macOS/iOS)</li>
@@ -110,14 +104,14 @@
     </ul>
     <p>      
       You can find more detailed instructions on the <a class="outside-link" 
-          href="https://github.com/laladdin/accessibility-exercises/blob/main/README.md"
+          href="https://github.com/laladdin/accessibility-workshop/blob/main/README.md"
           target="_blank" 
           rel="noopener noreferrer"
           @mouseover="hovering = 'link7'"
           @mouseout="hovering = ''"
           @focus="focused = 'link7'"
           @blur="focused = ''">          
-          README page of the project
+          README
           <img class="outside-link-icon" :src="hovering === 'link7' || focused === 'link7' ? iconHover : icon" alt="" aria-hidden="true">
         </a>
     </p>
@@ -145,6 +139,19 @@
     font-weight: bold;
     margin-top: 30px;
     margin-bottom: 10px;
+  }
+
+  .heading {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .big-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
   }
 
   ul {
