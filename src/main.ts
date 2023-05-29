@@ -9,6 +9,7 @@ import EventPlanner from "./views/EventPlanner.vue";
 import ModalView from "./views/ModalView.vue";
 import FormView from "./views/FormView.vue";
 import TableView from "./views/TableView.vue";
+import Popper from "vue3-popper";
 
 const pageTitle = "Accessibility Exercises";
 
@@ -29,4 +30,7 @@ router.afterEach((to, from) => {
         document.getElementById("skiplink")?.focus();
     }
 });
-createApp(App).use(router).mount("#app");
+var app = createApp(App);
+app.component("Popper", Popper);
+app.use(router);
+app.mount("#app");

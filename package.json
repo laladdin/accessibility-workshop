@@ -12,7 +12,8 @@
     "bootstrap": "^5.2.3",
     "vue": "^3.2.45",
     "vue-accessible-date-field": "^0.4.0",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vue3-popper": "^1.5.0"
   },
   "devDependencies": {
     "@types/bootstrap": "^5.2.6",
