@@ -2,20 +2,16 @@
     <h1 class="mb-5">Some details about software development and accessibility.</h1>
     <h2>Fact table</h2>
     <table class="access-table">
-        <thead>
-            <tr class="header-row">
-                <td scope="col">Fact</td>
-                <td scope="col">Category</td>
-                <td scope="col">Source</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="item in tableData" :key="item.id">
-                <td>{{ item.fact }}</td>
-                <td>{{ item.category }}</td>
-                <td>{{ item.source }}</td>
-            </tr>
-        </tbody>
+        <tr class="header-row">
+            <td scope="col">Fact</td>
+            <td scope="col">Category</td>
+            <td scope="col">Source</td>
+        </tr>
+        <tr v-for="item in tableData" :key="item.id">
+            <td>{{ item.fact }}</td>
+            <td>{{ item.category }}</td>
+            <td>{{ item.source }}</td>
+        </tr>
     </table>
 
     <h2 id="srdata-table-title" class="mt-5 p-0">Screen reader use percentages by browser</h2>

@@ -24,7 +24,3 @@
 
     provide("setSrText", setScreenreaderText);
 </script>
-
-<style>
-    @import "./style.css";
-</style>

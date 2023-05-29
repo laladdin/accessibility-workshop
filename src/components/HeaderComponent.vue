@@ -1,15 +1,15 @@
 <template>
-    <header class="mb-3">
-        <a href="#main" id="skiplink" class="skip-nav" @focus="toggleSkipNavVisibility(true)" @blur="toggleSkipNavVisibility(false)">
+    <div class="mb-3 header">
+        <a href="#maincontent" class="skip-nav" @focus="toggleSkipNavVisibility(true)" @blur="toggleSkipNavVisibility(false)">
             Skip to main content
         </a>
         <div class="row pt-4">
             <h2 class="col-12 col-md-5 logo-heading">
                 <RouterLink to="/">
-                    <img class="logo" src="../assets/fox-icon-with-text.svg" alt="Logo for accessibility training website." />
+                    <img class="logo" src="../assets/fox-icon-with-text.svg" aria-hidden="true" />
                 </RouterLink>
             </h2>
-            <nav class="col-12 col-md-7 main-nav">
+            <div class="col-12 col-md-7 main-nav">
                 <div class="row">
                     <div class="col-12 col-md-3 router-cell">
                         <RouterLink to="/event-planner">Event Planner</RouterLink>
@@ -24,9 +24,9 @@
                         <RouterLink to="/table">Table</RouterLink>
                     </div>
                 </div>
-            </nav>
+            </div>
         </div>
-    </header>
+    </div>
 </template>
 
 <script setup lang="ts">
