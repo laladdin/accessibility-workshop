@@ -1,6 +1,6 @@
 <template>
   <fieldset class="form-field">
-    <legend class="radio-buttons-label">{{ label }}</legend>
+    <div class="radio-buttons-label">{{ label }}</div>
     <div v-for="option in options" :key="option.value">
       <input
         type="radio"
@@ -30,7 +30,7 @@
     modelValue: String,
     options: {
       type: Array as () => Option[],
-      required: true,
+      required: false,
     },
   })
   
@@ -48,5 +48,10 @@
   .label {
     display: inline-block;
     margin-bottom: 0.5em;
+  }
+
+  input[type="radio"]:focus {
+    outline: auto 1px Highlight;
+    outline: auto 1px -webkit-focus-ring-color;
   }
 </style>

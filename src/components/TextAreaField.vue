@@ -1,19 +1,15 @@
 <template>
-    <div class="form-field">
-      <label :for="id" class="label">{{ label }}</label>
-      <textarea
-        :id="id"
-        class="textarea-field"
-        :name="name"
-        :placeholder="placeholder"
-        :value="modelValue"
-        @input="updateValue($event)"
-        :aria-invalid="error ? 'true' : 'false'"
-        :aria-describedby="error ? `${id}-error` : undefined"
-      ></textarea>
-      <p v-if="error" :id="`${id}-error`" class="error">{{ error }}</p>
-    </div>
-  </template>
+  <div class="form-field">
+    <textarea
+      :id="id"
+      class="textarea-field"
+      :name="name"
+      :placeholder="label"
+      :value="modelValue"
+      @input="updateValue($event)"
+    ></textarea>
+  </div>
+</template>
   
   <script setup lang="ts">
   import { ref, watchEffect, defineProps, defineEmits } from 'vue'
@@ -23,8 +19,7 @@
     label: String,
     name: String,
     modelValue: String,
-    placeholder: String,
-    error: String
+    placeholder: String
   })
   
   const emit = defineEmits(['update:modelValue'])
@@ -38,9 +33,5 @@
   .label {
     display: inline-block;
     margin-bottom: 0.5em;
-  }
-  .error {
-    color: #AD0000;
-    font-weight: 700;
   }
   </style>
