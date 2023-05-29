@@ -1,12 +1,12 @@
 <template>
     <transition name="modal">
-        <div v-show="isVisible" class="modal-backdrop" @click="closeModal">
+        <div v-show="isVisible" class="modal-backdrop">
             <div class="modal-content" role="dialog" aria-modal="true" :aria-labelledby="titleId" :aria-describedby="descriptionId" @click.stop>
-                <button ref="closeButton" @click="closeModal" @keydown.esc="closeModal" style="outline-offset: 2px; outline: 2px solid #005fcc">
+                <button ref="closeButton" @click="closeModal" @keydown.enter.prevent>
                     Close
                 </button>
                 <slot name="title">
-                    <h2 :id="titleId">{{ title }}</h2>
+                    <h4 :id="titleId">{{ title }}</h4>
                 </slot>
                 <slot name="description">
                     <p :id="descriptionId">{{ description }}</p>
@@ -65,21 +65,6 @@
             });
         }
     });
-
-    const handleTabFocus = (event: KeyboardEvent) => {
-        if (props.isVisible && event.key === "Tab") {
-            event.preventDefault();
-            if (closeButton.value) closeButton.value.focus();
-        }
-    };
-
-    onMounted(() => {
-        document.addEventListener("keydown", handleTabFocus);
-    });
-
-    onUnmounted(() => {
-        document.removeEventListener("keydown", handleTabFocus);
-    });
 </script>
 
 <style scoped>
@@ -98,7 +83,7 @@
     .modal-content {
         height: 70%;
         width: 60%;
-        background-color: #ffffff;
+        background-color: #00D67D;
         z-index: 1001;
         padding: 20px;
         display: flex;
