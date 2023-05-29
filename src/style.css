@@ -1,0 +1,160 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+}
+
+body > #app {
+    min-height: 100vh;
+    background-color: #E4FFF8;
+    display: flex;
+    flex-direction: column;
+    color: #545454;
+}
+
+#main {
+    min-height: 50% !important;
+    min-width: 33.33%; /* Each component takes at least a third of the screen */
+    flex-grow: 1; /* Allows components to grow to fill available space */
+    flex-shrink: 1; /* Allows components to shrink if needed */
+}
+
+.container {
+    height: 100%;
+    /* background-color: rgb(228, 219, 219); */
+    background-color: #E4FFF8;
+    text-align: left;
+    margin: auto;
+    width: 70% !important;  
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+nav div div {
+    display: flex;
+    justify-content: center;
+}
+
+.button-link {
+    color: blue;
+    border: none;
+    background-color: inherit;
+}
+
+.button-link:hover {
+    color: blue;
+    border: none;
+    text-decoration: underline;
+    background-color: inherit;
+}
+
+header {
+    margin: auto;
+    margin-bottom: 2rem;
+    width: 75%;
+    min-height: 20% !important;
+    flex-grow: 1;
+    border-bottom: 2px solid #195994;
+    justify-items: center;
+    text-align: center;
+}
+
+.logo {
+    height: 4.8em;
+    width: 10em;
+}
+
+.main-nav {
+    padding-top: 4rem;
+}
+
+/* form styles */
+.form-field {
+    width: 66%;
+    margin: 2rem auto;
+}
+
+.input-field,
+.textarea-field {
+    display: block;
+    width: 100%;
+    padding: 10px; /* increases input field's height */
+    margin: 0 auto; /* centers the input field */
+    margin-bottom: 1em;
+}
+
+.select-field {
+    display: block;
+    width: fit-content;
+    padding: 10px;
+    margin-bottom: 1em;
+}
+
+legend.radio-buttons-label {
+    font-size: 1rem;
+}
+
+.submit-area {
+    width: 66%;
+    margin: 2rem auto;
+}
+
+footer {
+    width: 100%;
+    min-height: 30% !important;
+    flex-grow: 1;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    background-color: #195994;
+    margin-top: auto;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+a.outside-link {
+    color: #176CBB;
+}
+
+a.outside-link:hover, a.outside-link:focus {
+    background-color: #FFDEF1;
+    color: #212529;
+    border: 1px solid #176CBB;
+    border-radius: 2px;
+}
+
+@media (min-width: 1920px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 65%;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+    .main-nav {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    header {
+        width: 85%;
+    }
+}
